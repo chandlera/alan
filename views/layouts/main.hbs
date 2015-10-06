@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Alan &amp; Hillary | Wedding</title>
+	</head>
+	<body>
+		<div id="content">
+			<section class="gold-bg">
+				{{{body}}}
+			</section>
+		</div>
+
+		<script>
+			window.document.addEventListener("DOMContentLoaded", function(event) {
+				var navItems = window.document.getElementsByClassName('nav-list-item');
+				navItems[0].addEventListener('click', function() {
+					var navItems = window.document.getElementsByClassName('nav-list-item');
+					Array.prototype.map.call(navItems, function(obj, index) {
+						if(index !== 0) {
+							// obj.style.display === 'block' ? obj.style.display = 'none' : obj.style.display = 'block';
+							obj.className = obj.className.indexOf('show') !== -1 ? obj.className.replace( /(?:^|\s)show(?!\S)/ , '' ) : obj.className + ' show';
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
