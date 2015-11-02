@@ -1,0 +1,18 @@
+@mixin hoverLi($y) {
+  transform: translateY($y);
+
+    .demo__elems {
+      transform: translateY(0 - $y);
+    }
+}
+@mixin notFirst {
+  .demo__examples {
+    .example-adv__top,
+    .example-adv__mid,
+    .example-adv__line {
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform $transFast, opacity $transFast;
+    }
+  }
+}

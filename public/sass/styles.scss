@@ -1,0 +1,62 @@
+@import 'keyframes';
+//@import 'fun';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+  background: #fcf5f2;
+
+  @media (max-width: 768px) {
+    font-size: 50%;
+  }
+}
+
+.container {
+  min-height: 200px;
+  width: 100%;
+  font-size: 1.8em;
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #000;
+}
+
+.nav__item {
+  position: relative;
+  height: 7rem;
+  font-size: 1.8rem;
+  line-height: 7rem;
+  border-right: 1px solid #e7e7e7;
+  display: inline-block;
+  width: 33%;
+  width: calc(100%/3);
+  display: flex;
+
+  &:hover {
+    transition: all 0.25s ease-in;
+    background-color: #37a1d9;
+    border-color: white;
+  }
+}
+
+.nav__item a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .nav__item:hover {
+    transition-duration: 0.5s;
+  }
+}

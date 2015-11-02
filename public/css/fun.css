@@ -1,0 +1,32 @@
+.bg {
+  background-color: red;
+  -webkit-animation: loading 10s linear 1;
+  animation: loading 10s linear 1; }
+
+.el {
+  color: red;
+  width: 200px;
+  border: 1px solid red; }
+  .el:after {
+    padding-left: 20px;
+    content: "0%";
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    padding: 10px 20px;
+    color: cyan;
+    mix-blend-mode: difference;
+    -webkit-animation: percentage 10s linear 1;
+    animation: percentage 10s linear 1; }
+
+.transition .box {
+  -webkit-animation: change 5s ease-out 1;
+  animation: change 5s ease-out 1;
+  background: #37a1d9;
+  width: 14em;
+  height: 14em;
+  border: 1em solid #fff;
+  position: absolute;
+  left: calc(50% - 8em);
+  top: calc(50% - 8em);
+  border-radius: 2em; }

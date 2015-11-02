@@ -3,8 +3,7 @@ var http = require('http');
 var expressHbs = require('express3-handlebars');
 var errorhandler = require('errorhandler');
 var throng = require('throng');
-var helmet = require('helmet');
-var browserSync = require('browser-sync');
+// var helmet = require('helmet');
 
 var routes = require('./routes');
 var app = express();
@@ -19,7 +18,7 @@ throng(start, {
 function start() {
 	app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));
 	app.set('view engine', 'hbs');
-        app.use(helmet());
+  // app.use(helmet());
 	app.set('port', process.env.PORT || 7001);
 	app.use(express.static(__dirname + '/public'));
 

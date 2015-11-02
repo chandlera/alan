@@ -1,0 +1,31 @@
+@keyframes loading {
+  0% {
+    width: 0;
+  } 100% {
+    width: 100%;
+  }
+}
+
+@keyframes percentage {
+  @for $i from 1 through 100 {
+    $percentage: $i + "%";
+    #{$percentage} {
+      content: $percentage;
+    }
+  }
+}
+
+@keyframes change {
+  0% {
+    border-radius: 0;
+    background-color: #37a1d9;
+  }
+  40%, 60% {
+    border-radius: 50%;
+    background-color: #f5cc5e;
+  }
+  100% {
+    border-radius: 0;
+    background-color: #37a1d9;
+  }
+}
