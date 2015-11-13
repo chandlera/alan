@@ -1,447 +1,10 @@
-@-webkit-keyframes loading {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
-
-@keyframes loading {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
-
-@-webkit-keyframes percentage {
-  1% {
-    content: "1%"; }
-  2% {
-    content: "2%"; }
-  3% {
-    content: "3%"; }
-  4% {
-    content: "4%"; }
-  5% {
-    content: "5%"; }
-  6% {
-    content: "6%"; }
-  7% {
-    content: "7%"; }
-  8% {
-    content: "8%"; }
-  9% {
-    content: "9%"; }
-  10% {
-    content: "10%"; }
-  11% {
-    content: "11%"; }
-  12% {
-    content: "12%"; }
-  13% {
-    content: "13%"; }
-  14% {
-    content: "14%"; }
-  15% {
-    content: "15%"; }
-  16% {
-    content: "16%"; }
-  17% {
-    content: "17%"; }
-  18% {
-    content: "18%"; }
-  19% {
-    content: "19%"; }
-  20% {
-    content: "20%"; }
-  21% {
-    content: "21%"; }
-  22% {
-    content: "22%"; }
-  23% {
-    content: "23%"; }
-  24% {
-    content: "24%"; }
-  25% {
-    content: "25%"; }
-  26% {
-    content: "26%"; }
-  27% {
-    content: "27%"; }
-  28% {
-    content: "28%"; }
-  29% {
-    content: "29%"; }
-  30% {
-    content: "30%"; }
-  31% {
-    content: "31%"; }
-  32% {
-    content: "32%"; }
-  33% {
-    content: "33%"; }
-  34% {
-    content: "34%"; }
-  35% {
-    content: "35%"; }
-  36% {
-    content: "36%"; }
-  37% {
-    content: "37%"; }
-  38% {
-    content: "38%"; }
-  39% {
-    content: "39%"; }
-  40% {
-    content: "40%"; }
-  41% {
-    content: "41%"; }
-  42% {
-    content: "42%"; }
-  43% {
-    content: "43%"; }
-  44% {
-    content: "44%"; }
-  45% {
-    content: "45%"; }
-  46% {
-    content: "46%"; }
-  47% {
-    content: "47%"; }
-  48% {
-    content: "48%"; }
-  49% {
-    content: "49%"; }
-  50% {
-    content: "50%"; }
-  51% {
-    content: "51%"; }
-  52% {
-    content: "52%"; }
-  53% {
-    content: "53%"; }
-  54% {
-    content: "54%"; }
-  55% {
-    content: "55%"; }
-  56% {
-    content: "56%"; }
-  57% {
-    content: "57%"; }
-  58% {
-    content: "58%"; }
-  59% {
-    content: "59%"; }
-  60% {
-    content: "60%"; }
-  61% {
-    content: "61%"; }
-  62% {
-    content: "62%"; }
-  63% {
-    content: "63%"; }
-  64% {
-    content: "64%"; }
-  65% {
-    content: "65%"; }
-  66% {
-    content: "66%"; }
-  67% {
-    content: "67%"; }
-  68% {
-    content: "68%"; }
-  69% {
-    content: "69%"; }
-  70% {
-    content: "70%"; }
-  71% {
-    content: "71%"; }
-  72% {
-    content: "72%"; }
-  73% {
-    content: "73%"; }
-  74% {
-    content: "74%"; }
-  75% {
-    content: "75%"; }
-  76% {
-    content: "76%"; }
-  77% {
-    content: "77%"; }
-  78% {
-    content: "78%"; }
-  79% {
-    content: "79%"; }
-  80% {
-    content: "80%"; }
-  81% {
-    content: "81%"; }
-  82% {
-    content: "82%"; }
-  83% {
-    content: "83%"; }
-  84% {
-    content: "84%"; }
-  85% {
-    content: "85%"; }
-  86% {
-    content: "86%"; }
-  87% {
-    content: "87%"; }
-  88% {
-    content: "88%"; }
-  89% {
-    content: "89%"; }
-  90% {
-    content: "90%"; }
-  91% {
-    content: "91%"; }
-  92% {
-    content: "92%"; }
-  93% {
-    content: "93%"; }
-  94% {
-    content: "94%"; }
-  95% {
-    content: "95%"; }
-  96% {
-    content: "96%"; }
-  97% {
-    content: "97%"; }
-  98% {
-    content: "98%"; }
-  99% {
-    content: "99%"; }
-  100% {
-    content: "100%"; } }
-
-@keyframes percentage {
-  1% {
-    content: "1%"; }
-  2% {
-    content: "2%"; }
-  3% {
-    content: "3%"; }
-  4% {
-    content: "4%"; }
-  5% {
-    content: "5%"; }
-  6% {
-    content: "6%"; }
-  7% {
-    content: "7%"; }
-  8% {
-    content: "8%"; }
-  9% {
-    content: "9%"; }
-  10% {
-    content: "10%"; }
-  11% {
-    content: "11%"; }
-  12% {
-    content: "12%"; }
-  13% {
-    content: "13%"; }
-  14% {
-    content: "14%"; }
-  15% {
-    content: "15%"; }
-  16% {
-    content: "16%"; }
-  17% {
-    content: "17%"; }
-  18% {
-    content: "18%"; }
-  19% {
-    content: "19%"; }
-  20% {
-    content: "20%"; }
-  21% {
-    content: "21%"; }
-  22% {
-    content: "22%"; }
-  23% {
-    content: "23%"; }
-  24% {
-    content: "24%"; }
-  25% {
-    content: "25%"; }
-  26% {
-    content: "26%"; }
-  27% {
-    content: "27%"; }
-  28% {
-    content: "28%"; }
-  29% {
-    content: "29%"; }
-  30% {
-    content: "30%"; }
-  31% {
-    content: "31%"; }
-  32% {
-    content: "32%"; }
-  33% {
-    content: "33%"; }
-  34% {
-    content: "34%"; }
-  35% {
-    content: "35%"; }
-  36% {
-    content: "36%"; }
-  37% {
-    content: "37%"; }
-  38% {
-    content: "38%"; }
-  39% {
-    content: "39%"; }
-  40% {
-    content: "40%"; }
-  41% {
-    content: "41%"; }
-  42% {
-    content: "42%"; }
-  43% {
-    content: "43%"; }
-  44% {
-    content: "44%"; }
-  45% {
-    content: "45%"; }
-  46% {
-    content: "46%"; }
-  47% {
-    content: "47%"; }
-  48% {
-    content: "48%"; }
-  49% {
-    content: "49%"; }
-  50% {
-    content: "50%"; }
-  51% {
-    content: "51%"; }
-  52% {
-    content: "52%"; }
-  53% {
-    content: "53%"; }
-  54% {
-    content: "54%"; }
-  55% {
-    content: "55%"; }
-  56% {
-    content: "56%"; }
-  57% {
-    content: "57%"; }
-  58% {
-    content: "58%"; }
-  59% {
-    content: "59%"; }
-  60% {
-    content: "60%"; }
-  61% {
-    content: "61%"; }
-  62% {
-    content: "62%"; }
-  63% {
-    content: "63%"; }
-  64% {
-    content: "64%"; }
-  65% {
-    content: "65%"; }
-  66% {
-    content: "66%"; }
-  67% {
-    content: "67%"; }
-  68% {
-    content: "68%"; }
-  69% {
-    content: "69%"; }
-  70% {
-    content: "70%"; }
-  71% {
-    content: "71%"; }
-  72% {
-    content: "72%"; }
-  73% {
-    content: "73%"; }
-  74% {
-    content: "74%"; }
-  75% {
-    content: "75%"; }
-  76% {
-    content: "76%"; }
-  77% {
-    content: "77%"; }
-  78% {
-    content: "78%"; }
-  79% {
-    content: "79%"; }
-  80% {
-    content: "80%"; }
-  81% {
-    content: "81%"; }
-  82% {
-    content: "82%"; }
-  83% {
-    content: "83%"; }
-  84% {
-    content: "84%"; }
-  85% {
-    content: "85%"; }
-  86% {
-    content: "86%"; }
-  87% {
-    content: "87%"; }
-  88% {
-    content: "88%"; }
-  89% {
-    content: "89%"; }
-  90% {
-    content: "90%"; }
-  91% {
-    content: "91%"; }
-  92% {
-    content: "92%"; }
-  93% {
-    content: "93%"; }
-  94% {
-    content: "94%"; }
-  95% {
-    content: "95%"; }
-  96% {
-    content: "96%"; }
-  97% {
-    content: "97%"; }
-  98% {
-    content: "98%"; }
-  99% {
-    content: "99%"; }
-  100% {
-    content: "100%"; } }
-
-@-webkit-keyframes change {
-  0% {
-    border-radius: 0;
-    background-color: #37a1d9; }
-  40%, 60% {
-    border-radius: 50%;
-    background-color: #f5cc5e; }
-  100% {
-    border-radius: 0;
-    background-color: #37a1d9; } }
-
-@keyframes change {
-  0% {
-    border-radius: 0;
-    background-color: #37a1d9; }
-  40%, 60% {
-    border-radius: 50%;
-    background-color: #f5cc5e; }
-  100% {
-    border-radius: 0;
-    background-color: #37a1d9; } }
-
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0; }
 
 html, body {
   font-size: 62.5%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   height: 100%;
   background: #fcf5f2; }
   @media (max-width: 768px) {
@@ -449,7 +12,7 @@ html, body {
       font-size: 50%; } }
 
 .container {
-  min-height: 200px;
+  min-height: 20rem;
   width: 100%;
   font-size: 1.8em; }
 
@@ -463,21 +26,42 @@ html, body {
   background-color: #000; }
 
 .nav__item {
+  transition: all 0.25s ease-in;
   position: relative;
-  height: 7rem;
+  height: 4rem;
   font-size: 1.8rem;
-  line-height: 7rem;
+  line-height: 4rem;
   border-right: 1px solid #e7e7e7;
   display: inline-block;
   width: 33%;
   width: calc(100%/3);
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2; }
+  .nav__item:first-child {
+    -webkit-flex: 0.5;
+    -ms-flex: 0.5;
+    flex: 0.5;
+    background-color: #37a1d9; }
+    .nav__item:first-child:hover {
+      background-color: #000;
+      -webkit-flex: 0.5;
+      -ms-flex: 0.5;
+      flex: 0.5; }
+  .nav__item:last-child {
+    border-right: 0px; }
+  .nav__item:first-child a {
+    font-size: 1.8rem; }
   .nav__item:hover {
     transition: all 0.25s ease-in;
     background-color: #37a1d9;
-    border-color: white; }
+    border-color: white;
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3; }
 
 .nav__item a {
   color: #fff;
@@ -485,6 +69,31 @@ html, body {
   text-align: center;
   width: 100%; }
 
+.side-menu {
+  transition: all 0.25s ease-in;
+  visibility: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0vh;
+  width: 0%;
+  background-color: #000;
+  color: #fff; }
+  .side-menu.active {
+    transition: all 0.25s ease-in;
+    visibility: visible;
+    height: 100vh;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+
 @media screen and (min-width: 480px) {
+  .nav__item {
+    height: 7rem;
+    line-height: 7rem;
+    font-size: 3rem; }
+  .nav__item:first-child a {
+    font-size: 3rem; }
   .nav__item:hover {
     transition-duration: 0.5s; } }
