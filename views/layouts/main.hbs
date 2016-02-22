@@ -6,28 +6,16 @@
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 		<meta name=viewport content="width=device-width, initial-scale=1">
 		<title>Alan Chandler</title>
-		<link rel="stylesheet" href="/dist/css/normalize.min.css" media="screen" title="no title" charset="utf-8">
-		<link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/dist/css/vendor/normalize.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/dist/css/styles.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/dist/css/main.css" media="screen" title="no title" charset="utf-8">
+		<link rel="shortcut icon" type="image/x-icon" href="/dist/images/favicon.png">
 		<!-- <link rel="stylesheet" href="/dist/css/styles.min.css" media="screen" title="no title" charset="utf-8"> -->
-		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			{{{body}}}
+			<script type="text/javascript" src="/dist/js/main.js"></script>
 		</div>
-		{{!-- <script>
-			window.document.addEventListener("DOMContentLoaded", function(event) {
-				var navItems = window.document.getElementsByClassName('nav-list-item');
-				navItems[0].addEventListener('click', function() {
-					var navItems = window.document.getElementsByClassName('nav-list-item');
-					Array.prototype.map.call(navItems, function(obj, index) {
-						if(index !== 0) {
-							// obj.style.display === 'block' ? obj.style.display = 'none' : obj.style.display = 'block';
-							obj.className = obj.className.indexOf('show') !== -1 ? obj.className.replace( /(?:^|\s)show(?!\S)/ , '' ) : obj.className + ' show';
-						}
-					});
-				});
-			});
-		</script> --}}
 	</body>
 </html>

@@ -3,6 +3,7 @@ var http = require('http');
 var expressHbs = require('express3-handlebars');
 var errorhandler = require('errorhandler');
 var throng = require('throng');
+var browserSync = require('browser-sync');
 // var helmet = require('helmet');
 
 var routes = require('./routes');
@@ -29,18 +30,18 @@ function start() {
 
 	app.get('/', routes.index);
 
-  // if(process.env.NODE_ENV === 'development') {
-  //   http.createServer(app).listen(app.get('port'), function() {
-  // 		console.log('Express server listening on port ' + app.get('port'));
-  // 		browserSync({
-  // 			proxy: 'localhost:' + app.get('port'),
-  // 			files: ['public/**/*.{js,css}']
-  // 		});
-  // 	});
-  // }
-  // else {
+  if(process.env.NODE_ENV && process.env.NODE_ENV === 'development') {
+    http.createServer(app).listen(app.get('port'), function() {
+  		console.log('Express server listening on port ' + app.get('port'));
+  		browserSync({
+  			proxy: 'localhost:' + app.get('port'),
+  			files: ['public/dist/**/*.{js,css}']
+  		});
+  	});
+  }
+  else {
     http.createServer(app).listen(app.get('port'), function() {
   		console.log('Express server listening on port ' + app.get('port'));
   	});
-  // }
+  }
 }
