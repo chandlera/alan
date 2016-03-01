@@ -16,3 +16,13 @@ nav {
     text-decoration: none;
   }
 }
+
+#svg {
+  display: flex;
+  padding: 0 50px;
+
+  svg {
+    flex: 1;
+    padding: 20px;
+  }
+}

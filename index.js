@@ -35,7 +35,7 @@ function start() {
   		console.log('Express server listening on port ' + app.get('port'));
   		browserSync({
   			proxy: 'localhost:' + app.get('port'),
-  			files: ['public/dist/**/*.{js,css}']
+  			files: ['public/dist/css/*.css', 'public/dist/js/*.js']
   		});
   	});
   }

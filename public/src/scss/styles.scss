@@ -1,5 +1,5 @@
-// @import 'keyframes';
-//@import 'fun';
+@import 'keyframes';
+@import 'fun';
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -33,7 +33,7 @@ html, body {
 .nav__item {
   transition: all 0.25s ease-in;
   position: relative;
-  height: 4rem;
+  height: 5rem;
   font-size: 1.8rem;
   line-height: 4rem;
   border-right: 1px solid #e7e7e7;
@@ -91,9 +91,58 @@ html, body {
   }
 }
 
+#drawing {
+  background: #333;
+  color: #fff;
+  width: 200px;
+  font-size: 3em;
+  margin-top: 1em;
+  text-align: center;
+  text-transform: uppercase;
+
+  .heart-one:before {
+    content: '\2665';
+    color: red;
+    height: 20px;
+  }
+
+  .heart-two {
+    background-color: red;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+
+    &:before,
+    &:after {
+      content: "";
+      background-color: red;
+      border-radius: 50%;
+      height: 30px;
+      position: absolute;
+      width: 30px;
+    }
+
+    &:before {
+      top: -15px;
+      left: 0;
+    }
+  }
+  .heart-three {
+    fill: red;
+    position: relative;
+    top: 5px;
+    width: 50px;
+    animation: pulse 1s ease infinite;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .nav__item {
-    height: 7rem;
+    height: 8rem;
     line-height: 7rem;
     font-size: 3rem;
   }
