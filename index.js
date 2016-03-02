@@ -5,7 +5,6 @@ var errorhandler = require('errorhandler');
 var throng = require('throng');
 var browserSync = require('browser-sync');
 var compress = require('compression');
-// var helmet = require('helmet');
 
 var routes = require('./routes');
 var app = express();
