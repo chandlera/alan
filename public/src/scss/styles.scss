@@ -91,6 +91,16 @@ html, body {
   }
 }
 
+#svg {
+  display: flex;
+  padding: 0 50px;
+
+  svg {
+    flex: 1;
+    padding: 20px;
+  }
+}
+
 #drawing {
   background: #333;
   color: #fff;
@@ -142,7 +152,7 @@ html, body {
 
 @media screen and (min-width: 480px) {
   .nav__item {
-    height: 8rem;
+    height: 7rem;
     line-height: 7rem;
     font-size: 3rem;
   }
