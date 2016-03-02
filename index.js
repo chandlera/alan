@@ -4,6 +4,7 @@ var expressHbs = require('express3-handlebars');
 var errorhandler = require('errorhandler');
 var throng = require('throng');
 var browserSync = require('browser-sync');
+var compress = require('compression');
 // var helmet = require('helmet');
 
 var routes = require('./routes');
@@ -22,6 +23,7 @@ function start() {
   // app.use(helmet());
 	app.set('port', process.env.PORT || 7001);
 	app.use(express.static(__dirname + '/public'));
+    app.use(compress());
 
 	if (process.env.NODE_ENV === 'development') {
 	  // only use in development
