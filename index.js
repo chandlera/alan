@@ -17,12 +17,18 @@ throng(start, {
 });
 
 function start() {
-	app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));
+  var hbs = expressHbs.create({
+    extname: 'hbs',
+    defaultLayout: 'main.hbs',
+    partialsDir: ['views/partials']
+  });
+
+	app.engine('hbs', hbs.engine);
 	app.set('view engine', 'hbs');
   // app.use(helmet());
 	app.set('port', process.env.PORT || 7001);
 	app.use(express.static(__dirname + '/public'));
-    app.use(compress());
+  app.use(compress());
 
 	if (process.env.NODE_ENV === 'development') {
 	  // only use in development
@@ -30,6 +36,7 @@ function start() {
 	}
 
 	app.get('/', routes.index);
+  app.get('/projects', routes.projects);
 
   if(process.env.NODE_ENV && process.env.NODE_ENV === 'development') {
     http.createServer(app).listen(app.get('port'), function() {
