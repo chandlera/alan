@@ -37,6 +37,7 @@ function start() {
 
 	app.get('/', routes.index);
   app.get('/projects', routes.projects);
+  app.get('/contact', routes.contact);
 
   if(process.env.NODE_ENV && process.env.NODE_ENV === 'development') {
     http.createServer(app).listen(app.get('port'), function() {

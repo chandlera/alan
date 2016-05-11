@@ -7,7 +7,7 @@
     "start": "npm install && node index.js",
     "dev": "NODE_ENV=development node index.js",
     "scss": "node-sass --output-style compressed -o public/dist/css public/src/scss",
-    "autoprefixer": "postcss -u autoprefixer -r public/dist/css/*",
+    "autoprefixer": "mkdir -p public/dist/css && postcss -u autoprefixer public/src/css -d public/dist/css",
     "lint": "eslint public/src/js",
     "babelify": "mkdir -p public/dist/js && babel public/src/js --out-dir public/dist/js",
     "minify": "minify public/dist/js/main.js",
@@ -17,7 +17,8 @@
     "watch:css": "onchange 'public/src/scss/*.scss' -- npm run build:css",
     "watch:js": "onchange 'public/src/js/*.js' -- npm run build:js",
     "watch:all": "parallelshell 'npm run watch:css' 'npm run watch:js'",
-    "development": "parallelshell 'npm run dev' 'npm run watch:all'"
+    "development": "parallelshell 'npm run dev' 'npm run watch:all'",
+    "temp": "npm run watch:all && node index.js"
   },
   "author": "Alan Chandler",
   "repository": "https://github.com/chandlera/alan",
@@ -48,6 +49,7 @@
     "imagemin-cli": "^2.1.0",
     "letsencrypt": "^1.3.0",
     "node-sass": "^3.4.2",
+    "nodemon": "^1.9.2",
     "onchange": "^2.0.0",
     "parallelshell": "^2.0.0",
     "path": "^0.12.7",
