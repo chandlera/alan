@@ -48,6 +48,7 @@
     "eslint-plugin-react": "^4.0.0",
     "imagemin-cli": "^2.1.0",
     "letsencrypt": "^1.3.0",
+    "minify": "^2.0.9",
     "node-sass": "^3.4.2",
     "nodemon": "^1.9.2",
     "onchange": "^2.0.0",

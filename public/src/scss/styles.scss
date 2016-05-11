@@ -122,7 +122,8 @@ a {
   &:first-child a {
     font-size: 1.8rem;
   }
-  &:hover {
+  &:hover,
+  &.active {
     transition: all 0.25s ease-in;
     background-color: #37a1d9;
     border-color: white;
