@@ -1,0 +1,17 @@
+.side-menu {
+  transition: all 0.25s ease-in;
+  visibility: hidden;
+  flex-direction: column;
+  height: 0vh;
+  width: 0%;
+  background-color: #000;
+  color: #fff;
+
+  &.active {
+    transition: all 0.25s ease-in;
+    visibility: visible;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+  }
+}
