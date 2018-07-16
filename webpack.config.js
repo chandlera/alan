@@ -4,6 +4,7 @@ const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const webpack = require('webpack');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -36,6 +37,11 @@ module.exports = {
       filename: devMode ? '[name].css' : '[name].[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new StyleLintPlugin({
+      configFile: path.join(__dirname, '.stylelintrc'),
+      files: path.join(__dirname, 'src/scss/**/*.scss'),
+      syntax: 'scss',
+    }),
   ],
   output: {
     filename: 'main.js',
