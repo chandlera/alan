@@ -1,56 +1,48 @@
-var express = require('express');
-var http = require('http');
-var expressHbs = require('express3-handlebars');
-var errorhandler = require('errorhandler');
-var throng = require('throng');
-var browserSync = require('browser-sync');
-var compress = require('compression');
+/* eslint-env node */
 
-var routes = require('./routes');
-var app = express();
+const express = require('express');
+const http = require('http');
+const errorhandler = require('errorhandler');
+const helmet = require('helmet');
+const throng = require('throng');
+const compress = require('compression');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 
-var WORKERS = process.env.WEB_CONCURRENCY || 1;
+const routes = require('./routes');
+const app = express();
 
-throng(start, {
-  workers: WORKERS,
-  lifetime: Infinity
+const config = require('./webpack.config.js');
+const compiler = webpack(config);
+
+const WORKERS = process.env.WEB_CONCURRENCY || 1;
+
+throng({
+    workers: WORKERS,
+    lifetime: Infinity,
+    start: start
 });
 
 function start() {
-  var hbs = expressHbs.create({
-    extname: 'hbs',
-    defaultLayout: 'main.hbs',
-    partialsDir: ['views/partials']
-  });
+    app.use(helmet());
+    app.set('port', process.env.PORT || 7001);
 
-	app.engine('hbs', hbs.engine);
-	app.set('view engine', 'hbs');
-  // app.use(helmet());
-	app.set('port', process.env.PORT || 7001);
-	app.use(express.static(__dirname + '/public'));
-  app.use(compress());
+    app.use(webpackDevMiddleware(compiler, {
+        publicPath: config.output.publicPath,
+        mode: process.env.NODE_ENV
+    }));
+    app.use(compress());
 
-	if (process.env.NODE_ENV === 'development') {
-	  // only use in development
-	  app.use(errorhandler());
-	}
+    if (process.env.NODE_ENV === 'development') {
+        app.use(errorhandler());
+    }
 
-	app.get('/', routes.index);
-  app.get('/projects', routes.projects);
-  app.get('/contact', routes.contact);
+    app.get('/', routes.index);
+    app.get('/projects', routes.projects);
+    app.get('/contact', routes.contact);
+    app.get('/.well-known/acme-challenge/2cR2xlfGjq7HPOeqjRiWmekD49JKYazWDX-tzCp-NvU', function (req, res) {
+        res.send('2cR2xlfGjq7HPOeqjRiWmekD49JKYazWDX-tzCp-NvU.cowSSx6eB5gl2OcF18rP9k_bx0-NdNcRZNnxkIrSZb4');
+    });
 
-  if(process.env.NODE_ENV && process.env.NODE_ENV === 'development') {
-    http.createServer(app).listen(app.get('port'), function() {
-  		console.log('Express server listening on port ' + app.get('port'));
-  		browserSync({
-  			proxy: 'localhost:' + app.get('port'),
-  			files: ['public/dist/css/*.css', 'public/dist/js/*.js']
-  		});
-  	});
-  }
-  else {
-    http.createServer(app).listen(app.get('port'), function() {
-  		console.log('Express server listening on port ' + app.get('port'));
-  	});
-  }
+    http.createServer(app).listen(app.get('port'), function () { });
 }

@@ -1,0 +1,105 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "rules": {
+        "array-bracket-spacing": [
+            "error",
+            "always",
+            {
+                "objectsInArrays": false,
+                "arraysInArrays": false
+            }
+        ],
+        "arrow-spacing": "error",
+        "brace-style": [
+            "error",
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "comma-dangle": "error",
+        "comma-spacing": "error",
+        "curly": "error",
+        "dot-notation": "error",
+        "eol-last": "error",
+        "eqeqeq": "error",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "key-spacing": "error",
+        "keyword-spacing": "error",
+        "new-cap": "warn",
+        "new-parens": "error",
+        "no-alert": "warn",
+        "no-array-constructor": "error",
+        "no-console": "warn",
+        "no-continue": "error",
+        "no-duplicate-imports": "error",
+        "no-eval": "error",
+        "no-floating-decimal": "error",
+        "no-labels": [
+            "error",
+            {
+                "allowSwitch": true
+            }
+        ],
+        "no-lonely-if": "warn",
+        "no-multi-assign": "error",
+        "no-multi-spaces": "error",
+        "no-multi-str": "error",
+        "no-nested-ternary": "error",
+        "no-new-object": "error",
+        "no-new-require": "error",
+        "no-proto": "error",
+        "no-throw-literal": "error",
+        "no-unneeded-ternary": "error",
+        "no-unused-vars": "warn",
+        "no-useless-constructor": "error",
+        "no-var": "error",
+        "no-whitespace-before-property": "error",
+        "no-with": "error",
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "operator-linebreak": [
+            "error",
+            "after"
+        ],
+        "prefer-const": "warn",
+        "prefer-template": "warn",
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "quote-props": [
+            "error",
+            "as-needed"
+        ],
+        "radix": "error",
+        "semi": "error",
+        "space-before-blocks": [
+            "error",
+            "always"
+        ],
+        "space-in-parens": "error",
+        "space-infix-ops": "error",
+        "template-curly-spacing": "error",
+        "wrap-iife": "error"
+    },
+    "extends": [
+        "eslint:recommended"
+    ]
+}
