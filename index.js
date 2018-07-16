@@ -26,6 +26,7 @@ throng({
 function start() {
     app.use(helmet());
     app.set('port', process.env.PORT || 7001);
+    app.set('view engine', 'ejs');
 
     app.use(webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
