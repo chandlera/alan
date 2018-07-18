@@ -21,12 +21,11 @@
 <body>
     {{> partials/nav}}
 
-    {{#> content-block}}
-    {{/content-block}}
+    {{#> content-block}}{{/content-block}}
 
+    <footer>{{> partials/footer }}</footer>
     {{#> scripts-block}}
         {{> partials/scripts}}
     {{/scripts-block}}
-    <footer>{{> partials/footer }}</footer>
 </body>
 </html>

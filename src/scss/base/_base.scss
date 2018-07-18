@@ -4,6 +4,20 @@ body {
   min-height: 20rem;
   width: 100%;
   font-size: 2.8em;
+
+  display: grid;
+  grid-template-areas: 
+        "nav nav nav"
+        "content content content"
+        "content content content"
+        "footer . .";
+}
+
+footer {
+  grid-row: footer;
+  grid-column: footer;
+  margin-left: 20px;
+  padding: 15px;
 }
 
 a {
@@ -12,7 +26,11 @@ a {
 
 h1,
 h2 {
-  margin: 0px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 img {
