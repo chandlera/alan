@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-{{> partials/head}}
-
-<body>
-  {{> partials/nav}}
-
+{{#> layouts/main title="Home"}}
+  {{#*inline "content-block"}}
   <main class="blurb">
     <div id="drawing">
       <div>
@@ -35,7 +29,5 @@
       <br>
     </div>
   </main>
-  <script type="text/javascript" src="main.js"></script>
-</body>
-
-</html>
+  {{/inline}}
+{{/layouts/main}}

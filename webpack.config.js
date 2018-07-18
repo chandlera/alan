@@ -27,6 +27,7 @@ module.exports = {
       partials: [
         path.join(__dirname, 'dist', 'partials', '*.hbs'),
         path.join(__dirname, 'src', 'views', 'partials', '*.hbs'),
+        path.join(__dirname, 'src', 'views', 'layouts', '*.hbs'),
       ],
     }),
     new WorkboxPlugin.GenerateSW({
