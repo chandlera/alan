@@ -22,14 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   [...document.querySelectorAll('.nav__item')].forEach(menuItem =>
-    menuItem.classList.toggle(
-      'active',
-      menuItem.querySelector('a').pathname === document.location.pathname
-    )
+    menuItem
+      .querySelector('a')
+      .classList.toggle(
+        'active',
+        menuItem.querySelector('a').pathname === document.location.pathname
+      )
   );
-  document.querySelector('[data-action=menu-click]').onclick = () => {
-    const menu = document.querySelector('.side-menu');
-    menu.classList.toggle('active');
-    return false;
-  };
 });

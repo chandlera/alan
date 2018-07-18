@@ -1,12 +1,11 @@
-// @import 'keyframes';
-// @import 'fun';
 @import 'base/base';
+@import 'base/fonts';
 @import 'layout/nav';
-@import 'layout/sidemenu';
 @import 'module/blurb';
 @import 'module/drawing';
 @import 'state/text';
 @import 'state/modifiers';
+@import 'vars';
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -17,7 +16,9 @@ html, body {
   font-size: 62.5%;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   height: 100%;
-  background: #89CAED;
+  background: $main-bg-color;
+  color: $main-font-color;
+  margin: 0;
 }
 
 @media (max-width: 768px) {

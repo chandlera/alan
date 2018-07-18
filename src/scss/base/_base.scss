@@ -1,11 +1,13 @@
-.container {
+@import '../vars';
+
+body {
   min-height: 20rem;
   width: 100%;
   font-size: 2.8em;
 }
 
 a {
-  color: #FFE08D;
+  color: $main-font-color;
 }
 
 h1,
