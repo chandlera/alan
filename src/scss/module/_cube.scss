@@ -1,0 +1,61 @@
+.scene {
+    border: 1px solid #CCC;
+    perspective: 400px;
+}
+
+.cube {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    transition: transform ease-out 2s; 
+    
+    &.show {
+        &-home {
+            transform: rotateY(0deg);
+        }
+        &-cube {
+            transform: rotateY(90deg);
+        }
+        &-projects {
+            transform: rotateY(270deg);
+        }
+        &-contact {
+            transform: rotateY(180deg);
+        }
+    }
+
+    &.is-spinning {
+        animation: spinCube 8s infinite ease-in-out;
+    }
+}
+
+@keyframes spinCube {
+    0% { transform: translateZ(-100px) rotateX(  0deg) rotateY(  0deg); }
+    100% { transform: translateZ(-100px) rotateX(360deg) rotateY(360deg); }
+}
+
+.cube__face {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid black;
+    line-height: 100vh;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    overflow: scroll;
+}
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(101px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(50vw); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(720px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(50vw); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(50vh); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(50vh); }
+
+.cube.is-backface-hidden .cube__face {
+    backface-visibility: hidden;
+}

@@ -21,7 +21,24 @@
 <body>
     {{> partials/nav}}
 
-    {{#> content-block}}{{/content-block}}
+    <div class="scene">
+        <div class="cube">
+        <div class="cube__face cube__face--front">
+            {{> partials/home}}
+        </div>
+        <div class="cube__face cube__face--back">
+            {{> partials/contact}}
+        </div>
+        <div class="cube__face cube__face--right">
+            {{> partials/projects}}
+        </div>
+        <div class="cube__face cube__face--left">
+            {{> partials/cube}}
+        </div>
+        <div class="cube__face cube__face--top">top</div>
+        <div class="cube__face cube__face--bottom">bottom</div>
+    </div>
+    </div>
 
     <footer>{{> partials/footer }}</footer>
     {{#> scripts-block}}
