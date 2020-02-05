@@ -47,6 +47,7 @@
     color: white;
     text-align: center;
     overflow: scroll;
+    pointer-events: none;
 }
 
 .cube__face--front  { transform: rotateY(  0deg) translateZ(101px); }

@@ -40,7 +40,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new StyleLintPlugin({
       configFile: path.join(__dirname, '.stylelintrc'),
-      files: path.join(__dirname, 'src/scss/**/*.scss'),
+      files: 'src/scss/**/*.scss',
       syntax: 'scss',
     }),
   ],
