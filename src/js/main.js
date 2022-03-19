@@ -16,7 +16,7 @@ function RangeDisplay(input) {
   this.input.parentNode.appendChild(this.output);
 }
 
-RangeDisplay.prototype.update = function() {
+RangeDisplay.prototype.update = function () {
   this.output.textContent = this.input.value + this.units;
 };
 
@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
       navigator.serviceWorker
         .register('/service-worker.js')
-        .then(registration => {
+        .then((registration) => {
           console.log('SW registered: ', registration);
         })
-        .catch(registrationError => {
+        .catch((registrationError) => {
           console.log('SW registration failed: ', registrationError);
         });
     });
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuItems = [...document.querySelectorAll('.nav__item')];
   const menuItemAnchors = [...document.querySelectorAll('.nav__item a')];
 
-  menuItems.forEach(menuItem => {
-    menuItem.addEventListener('click', evt => {
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', (evt) => {
       const layoutCube = document.querySelector('.cube');
       layoutCube.className = layoutCube.className.replace(/show-/, '');
       layoutCube.classList.add(`show-${evt.target.dataset.show}`);
-      menuItemAnchors.forEach(anchor => anchor.classList.remove('active'));
+      menuItemAnchors.forEach((anchor) => anchor.classList.remove('active'));
       document.querySelector(`[href="#${evt.target.dataset.show}"]`).classList.add('active');
     });
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // perspective
   var perspectiveRange = document.querySelector('.perspective-range');
   var perspectiveDisplay = perspectiveRange.parentNode.querySelector('.range-display');
-  perspectiveRange.onchange = perspectiveRange.oninput = function() {
+  perspectiveRange.onchange = perspectiveRange.oninput = function () {
     var value = perspectiveRange.value + 'px';
     // set to none at max
     if (value == '1000px') {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // origin x
   var originXRange = document.querySelector('.origin-x-range');
-  originXRange.onchange = originXRange.oninput = function() {
+  originXRange.onchange = originXRange.oninput = function () {
     originX = originXRange.value;
     updatePerspectiveOrigin();
   };
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // origin y
   var originYRange = document.querySelector('.origin-y-range');
-  originYRange.onchange = originYRange.oninput = function() {
+  originYRange.onchange = originYRange.oninput = function () {
     originY = originYRange.value;
     updatePerspectiveOrigin();
   };
@@ -100,14 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // spin cube
   var spinCubeCheckbox = document.querySelector('.spin-cube-checkbox');
-  spinCubeCheckbox.onchange = function() {
+  spinCubeCheckbox.onchange = function () {
     cube.classList.toggle('is-spinning', spinCubeCheckbox.checked);
   };
   spinCubeCheckbox.onchange();
 
   // backface visibility
   var backfaceCheckbox = document.querySelector('.backface-checkbox');
-  backfaceCheckbox.onchange = function() {
+  backfaceCheckbox.onchange = function () {
     cube.classList.toggle('is-backface-hidden', !backfaceCheckbox.checked);
   };
 });

@@ -5,6 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const webpack = require('webpack');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -37,7 +38,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new CopyPlugin({
       patterns: [
         {
@@ -46,6 +46,7 @@ module.exports = {
         },
       ],
     }),
+    new ESLintPlugin(),
   ],
   output: {
     filename: 'main.js',
@@ -53,7 +54,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    static: './dist',
     hot: true,
   },
   module: {
@@ -71,17 +72,7 @@ module.exports = {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
-        use: [
-          { loader: 'babel-loader', options: { presets: ['@babel/preset-env'] } },
-          {
-            loader: 'eslint-loader',
-            options: {
-              useEslintrc: true,
-              failOnError: true,
-              configFile: path.join(__dirname, '.eslintrc'),
-            },
-          },
-        ],
+        use: [{ loader: 'babel-loader', options: { presets: ['@babel/preset-env'] } }],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
