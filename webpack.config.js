@@ -4,6 +4,7 @@ const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -37,6 +38,14 @@ module.exports = {
       filename: devMode ? '[name].css' : '[name].[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public', '.well-known', 'cf-2fa-verify.txt'),
+          to: path.resolve(__dirname, 'dist', '.well-known', 'cf-2fa-verify.txt'),
+        },
+      ],
+    }),
   ],
   output: {
     filename: 'main.js',
