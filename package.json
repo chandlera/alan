@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve",
+    "build": "eleventy && NODE_ENV=production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alan Chandler",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0"
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "autoprefixer": "^10.4.7",
+    "dotenv": "^16.0.1",
+    "postcss-cli": "^9.1.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "eleventy-plugin-error-overlay": "^1.0.0",
+    "eleventy-plugin-postcss": "^1.0.4",
+    "html-minifier": "^4.0.0"
   }
 }
