@@ -37,7 +37,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
     }),
-    new ESLintPlugin(),
   ],
   output: {
     filename: 'main.js',

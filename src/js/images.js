@@ -6,5 +6,4 @@ import '../images/me.png';
 import '../images/rainier.png';
 import '../images/seattle.png';
 import '../images/wizards.svg';
-
 export default {};

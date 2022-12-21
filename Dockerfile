@@ -16,5 +16,6 @@ COPY . .
 
 EXPOSE 7001
 
-RUN npm run start
+RUN npm run dist
 
+CMD [ "node", "index.js" ]
