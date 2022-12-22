@@ -1,4 +1,4 @@
-FROM node:16-bullseye-slim
+FROM node:18-bullseye-slim
 
 WORKDIR /usr/src/app
 
@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN ["npm", "i", "-G", "npm-check-updates"]
+#RUN ["npm", "i", "-G", "npm-check-updates"]
 
 RUN npm install
 # If you are building your code for production
