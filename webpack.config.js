@@ -1,25 +1,13 @@
 /* eslint-env node */
 const path = require('path');
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const webpack = require('webpack');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './src/js/main.js',
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false,
-      }),
-    ],
-  },
   plugins: [
     new HandlebarsPlugin({
       entry: path.join(__dirname, 'src', 'views', '*.hbs'),
