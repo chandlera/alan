@@ -2,6 +2,8 @@
 npm-debug.log
 .DS_Store
 /*.env
+/dist
+dist
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
