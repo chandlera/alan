@@ -1,5 +1,7 @@
 /* eslint-env node */
-const path = require('path');
+
+import { Path } from "https://deno.land/x/path@v3.0.0/dist/mod.js";
+
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -10,12 +12,12 @@ module.exports = {
   entry: './src/js/main.js',
   plugins: [
     new HandlebarsPlugin({
-      entry: path.join(__dirname, 'src', 'views', '*.hbs'),
-      output: path.join(__dirname, 'dist', '[name].html'),
+      entry: Path.join(__dirname, 'src', 'views', '*.hbs'),
+      output: Path.join(__dirname, 'dist', '[name].html'),
       partials: [
-        path.join(__dirname, 'dist', 'partials', '*.hbs'),
-        path.join(__dirname, 'src', 'views', 'partials', '*.hbs'),
-        path.join(__dirname, 'src', 'views', 'layouts', '*.hbs'),
+        Path.join(__dirname, 'dist', 'partials', '*.hbs'),
+        Path.join(__dirname, 'src', 'views', 'partials', '*.hbs'),
+        Path.join(__dirname, 'src', 'views', 'layouts', '*.hbs'),
       ],
     }),
     new WorkboxPlugin.GenerateSW({
@@ -28,7 +30,7 @@ module.exports = {
   ],
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: Path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -48,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
+        include: Path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader', options: { presets: ['@babel/preset-env'] } }],
       },
