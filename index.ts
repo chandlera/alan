@@ -26,14 +26,25 @@ async function handleHttp(conn: Deno.Conn) {
     const url = new URL(requestEvent.request.url);
     const filepath = decodeURIComponent(url.pathname).replace('/', '');
 
-    if (['.svg', '.png', '.css', '.ico', '.js'].includes(extname(filepath))) {
+    if (['.svg', '.png', '.css', '.ico', '.js', '.jpg'].includes(extname(filepath))) {
       let file;
       try {
         file = await Deno.open(`./${filepath}`, { read: true });
       } catch {
         // If the file cannot be opened, return a "404 Not Found" response
-        const notFoundResponse = new Response("404 Not Found", { status: 404 });
+        file = await hbs.renderView('fourohfour');
+        // If the file cannot be opened, return a "404 Not Found" response
+        const notFoundResponse = new Response(
+          file, 
+          { 
+            status: 404, 
+            headers: {
+              'content-type': 'text/html'
+            } 
+          }
+        );
         await requestEvent.respondWith(notFoundResponse);
+      
         return;
       }
 
