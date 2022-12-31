@@ -97,8 +97,5 @@ async function handleHttp(conn: Deno.Conn) {
       );
       await requestEvent.respondWith(response);
     }
-    
-
-   
   }
 }
