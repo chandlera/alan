@@ -1,16 +1,12 @@
-FROM denoland/deno:1.29.1
+FROM denoland/deno:1.29.1 as base
 
-EXPOSE 7001
-
-WORKDIR /usr/src/app
+WORKDIR /app
 
 USER deno
 
-COPY deps.ts .
+COPY . ./
+
 RUN deno cache deps.ts
+RUN deno cache server.tsx
 
-ADD . .
-
-RUN deno cache index.ts
-
-CMD ["run", "--allow-net", "--allow-read=src,public", "/usr/src/app/index.ts"]
+CMD ["run", "--allow-net", "--allow-read", "/app/server.tsx"]

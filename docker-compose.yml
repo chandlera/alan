@@ -1,12 +1,13 @@
+version: "3.9"
+
 services:
-  node:
-    image: "node:16-bullseye-slim"
-    user: "node"
-    working_dir: /usr/src/app
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - ./:/usr/src/app
+  deno:
+    container_name: alan-chandler
+    image: "chandlera718/alan-chandler"
+    restart: always
     ports:
-      - "7001:7001"
-    command: "node /usr/src/app/index.js"
+      - "${PORT}:${PORT}"
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
