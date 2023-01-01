@@ -1,13 +1,12 @@
-FROM denoland/deno:latest as base
+FROM denoland/deno:1.29.1 as base
 
 WORKDIR /app
 
-COPY . ./
-
 USER deno
 
+COPY . ./
+
 RUN deno cache deps.ts
+RUN deno cache server.tsx
 
-RUN deno cache index.ts
-
-CMD ["run", "--allow-net", "--allow-read=/app/src/,/app/public/", "/app/index.ts"]
+CMD ["run", "--allow-net", "--allow-read", "/app/server.tsx"]

@@ -1,13 +1,13 @@
 version: "3.9"
 
 services:
-    alan-chandler:
-        container_name: alan-chandler
-        image: chandlera718/alan-chandler
-        restart: always
-        build:
-            context: .
-            dockerfile: Dockerfile
-            target: base
-        ports:
-            - "${PORT}:${PORT}"
+  deno:
+    container_name: alan-chandler
+    image: "chandlera718/alan-chandler"
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
