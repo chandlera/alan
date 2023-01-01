@@ -1,4 +1,6 @@
-FROM denoland/deno:1.29.1 as base
+FROM denoland/deno:1.29.1
+
+expose 7001
 
 WORKDIR /app
 
