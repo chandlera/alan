@@ -16,6 +16,8 @@ app.use(MyErrors);
 app.use(router.routes());
 app.use(router.allowedMethods());
 
+// TODO: add logging middleware, maybe sentry?
+
 app.use(async (ctx: Context) => {
   await send(ctx, ctx.request.url.pathname, {
      root: `${Deno.cwd()}/public`
