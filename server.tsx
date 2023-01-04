@@ -20,7 +20,8 @@ app.use(router.allowedMethods());
 
 app.use(async (ctx: Context) => {
   await send(ctx, ctx.request.url.pathname, {
-     root: `${Deno.cwd()}/public`
+     root: `${Deno.cwd()}/public`,
+     maxage: 2592000000
   });
 });
 
