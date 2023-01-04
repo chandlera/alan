@@ -1,7 +1,7 @@
 /** @jsx h */
-import { h } from "../../deps.ts";
+import { h } from "../../../deps.ts";
 
-export default function Navigation(props: { currentPath: any; }) {
+export default function Navigation(props: { currentPath: string; }) {
     const {
         currentPath
     } = props;

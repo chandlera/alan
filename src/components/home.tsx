@@ -1,10 +1,10 @@
 /** @jsx h */
-import { h, Fragment } from "../../deps.ts";
+import { h } from "../../deps.ts";
 import PictureWithSources from "./picture-with-sources.tsx";
 
 export default function Index() {
     return (
-      <Fragment>
+      <div className="blurb__left">
         <h1>Welcome to my site</h1>
         <p>Here's a little info about me</p>
         <div className="blurb__timeline">
@@ -35,6 +35,6 @@ export default function Index() {
             <PictureWithSources largeSource={"/images/expedia.png"} smallSource={"/images/expedia.png"} />
           </div>
         </div>
-      </Fragment>
+      </div>
     );
   }

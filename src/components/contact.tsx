@@ -4,7 +4,7 @@ import { h, Fragment } from "../../deps.ts";
 export default function Contact() {
     return (
       <Fragment>
-       <div class="blurb__left rounded--inset--box--shadow">
+        <div class="blurb__left rounded--inset--box--shadow">
           <img src="/images/me.png" alt="Picture of me" width="200px" style={{maxWidth: '300px'}} />
         </div>
         <div class="blurb__center rounded--box--shadow">
